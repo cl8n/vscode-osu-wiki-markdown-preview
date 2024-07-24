@@ -1,0 +1,425 @@
+/* Resets for extra padding in the window */
+html, body {
+	padding: 0;
+}
+
+/* More fitting color for code lines in the left margin (taken from ranking graph) */
+.showEditorSelection .code-active-line:before {
+	border-left: 3px solid #fc2a !important;
+}
+
+.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid #fc2 !important;
+}
+
+/* Torus fonts */
+@font-face {
+	font-family: Torus;
+	font-weight: 400;
+	src: url("./torus/Torus-Regular.otf") format("opentype");
+}
+@font-face {
+	font-family: Torus;
+	font-weight: 600;
+	src: url("./torus/Torus-SemiBold.otf") format("opentype");
+}
+@font-face {
+	font-family: Torus;
+	font-weight: 700;
+	src: url("./torus/Torus-SemiBold.otf") format("opentype");
+}
+
+/* Inter fonts */
+@font-face {
+	font-family: Inter;
+	font-weight: 100;
+	src: url("./inter/Inter-Thin.ttf") format("truetype");
+}
+@font-face {
+	font-family: Inter;
+	font-weight: 200;
+	src: url("./inter/Inter-ExtraLight.ttf") format("truetype");
+}
+@font-face {
+	font-family: Inter;
+	font-weight: 300;
+	src: url("./inter/Inter-Light.ttf") format("truetype");
+}
+@font-face {
+	font-family: Inter;
+	font-weight: 400;
+	src: url("./inter/Inter-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: Inter;
+	font-weight: 500;
+	src: url("./inter/Inter-Medium.ttf") format("truetype");
+}
+@font-face {
+	font-family: Inter;
+	font-weight: 600;
+	src: url("./inter/Inter-SemiBold.ttf") format("truetype");
+}
+@font-face {
+	font-family: Inter;
+	font-weight: 700;
+	src: url("./inter/Inter-Bold.ttf") format("truetype");
+}
+@font-face {
+	font-family: Inter;
+	font-weight: 800;
+	src: url("./inter/Inter-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+	font-family: Inter;
+	font-weight: 900;
+	src: url("./inter/Inter-Black.ttf") format("truetype");
+}
+
+.osu-md {
+	/* Color vars */
+	--base-hue: 45;
+	--hsl-p: var(--base-hue),100%,50%;
+	--hsl-h1: var(--base-hue),100%,70%;
+	--hsl-h2: var(--base-hue),50%,45%;
+	--hsl-c1: var(--base-hue),40%,100%;
+	--hsl-c2: var(--base-hue),40%,90%;
+	--hsl-l1: var(--base-hue),40%,80%;
+	--hsl-l2: var(--base-hue),40%,75%;
+	--hsl-l3: var(--base-hue),40%,70%;
+	--hsl-l4: var(--base-hue),40%,50%;
+	--hsl-d1: var(--base-hue),20%,35%;
+	--hsl-d2: var(--base-hue),20%,30%;
+	--hsl-d3: var(--base-hue),20%,25%;
+	--hsl-d4: var(--base-hue),20%,20%;
+	--hsl-d5: var(--base-hue),20%,15%;
+	--hsl-d6: var(--base-hue),20%,10%;
+	--hsl-f1: var(--base-hue),10%,60%;
+	--hsl-b1: var(--base-hue),10%,40%;
+	--hsl-b2: var(--base-hue),10%,30%;
+	--hsl-b3: var(--base-hue),10%,25%;
+	--hsl-b4: var(--base-hue),10%,20%;
+	--hsl-b5: var(--base-hue),10%,15%;
+	--hsl-b6: var(--base-hue),10%,10%;
+
+	/* Other global vars */
+	/* TODO test other language default-font */
+	--font-content: Inter, sans-serif;
+	--font-default: Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'Hiragino Kaku Gothic ProN', Meiryo, 'Microsoft YaHei', 'Apple SD Gothic Neo', sans-serif;
+	--font-default-th: Torus, Inter, 'Helvetica Neue', 'Prompt', Tahoma, Arial, 'Hiragino Kaku Gothic ProN', Meiryo, 'Microsoft YaHei', "Apple SD Gothic Neo", sans-serif;
+	--font-default-vi: Quicksand, Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'PingFang TC', 'Microsoft JhengHei', 'Apple SD Gothic Neo', system-ui, sans-serif;
+	--font-default-zh: Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'Apple SD Gothic Neo', system-ui, sans-serif;
+	--font-default-zh-tw: Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'PingFang TC', 'Microsoft JhengHei', 'Apple SD Gothic Neo', system-ui, sans-serif;
+
+	/* osu-md vars */
+	--code-background-colour: hsl(var(--hsl-b6));
+	--paragraph-space: 1.5em;
+
+	background-color: hsl(var(--hsl-b5));
+	color: hsl(var(--hsl-c1));
+	font-family: var(--font-content);
+	font-size: 14px;
+	line-height: 1.35;
+	padding: 20px;
+	word-wrap: break-word;
+}
+
+.osu-md code {
+	border-radius: 4px;
+	background-color: var(--code-background-colour);
+	color: hsl(var(--hsl-l1));
+	padding: 1px 4px;
+}
+
+.osu-md hr {
+	border-color: hsl(var(--hsl-b3));
+}
+
+.osu-md iframe {
+	max-width: 100%;
+}
+
+.osu-md img {
+	max-width: 100%;
+}
+
+.osu-md video {
+	max-width: 100%;
+}
+
+.osu-md pre {
+	background-color: var(--code-background-colour);
+	color: hsl(var(--hsl-l1));
+	border: none;
+	border-radius: 0;
+}
+
+.osu-md pre > code {
+	border: none;
+	padding: 0;
+}
+
+.osu-md > *:last-child {
+	margin-bottom: 0;
+}
+
+/* figure, footnote */
+
+.osu-md h1,
+.osu-md h2,
+.osu-md h3,
+.osu-md h4,
+.osu-md h5,
+.osu-md h6 {
+	font-family: var(--font-default);
+	clear: both;
+	font-weight: bold;
+	font-style: normal;
+	color: hsl(var(--hsl-c1));
+
+	/* Extra resets for VSCode style */
+	margin: 0;
+	padding: 0;
+}
+
+.osu-md h1:first-child,
+.osu-md h2:first-child,
+.osu-md h3:first-child,
+.osu-md h4:first-child,
+.osu-md h5:first-child,
+.osu-md h6:first-child {
+	margin-top: 0;
+}
+
+.osu-md h1 {
+	margin-top: 40px;
+	font-weight: 600;
+}
+
+.osu-md.osu-md--wiki h1 {
+	margin-right: 0;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid hsl(var(--hsl-b3));
+}
+
+.osu-md h2 {
+	font-size: 26px;
+	font-weight: 600;
+	margin: 20px 0 10px;
+}
+
+.osu-md.osu-md--news h2 {
+	font-size: 24px;
+	padding-bottom: 5px;
+	border-bottom: 1px solid hsl(var(--hsl-b3));
+}
+
+.osu-md.osu-md--wiki h2 {
+	padding-bottom: 5px;
+	border-bottom: 1px solid hsl(var(--hsl-b3));
+}
+
+.osu-md h3 {
+	font-size: 20px;
+	margin: 30px 0 10px;
+}
+
+.osu-md.osu-md--news h3 {
+	font-size: 18px;
+}
+
+.osu-md h4 {
+	font-size: 18px;
+	margin: 30px 0 10px;
+}
+
+.osu-md.osu-md--news h4 {
+	font-size: inherit;
+	color: inherit;
+}
+
+.osu-md h5 {
+	font-size: 16px;
+	margin-top: 20px;
+}
+
+.osu-md h6 {
+	font-size: 14px;
+	margin-top: 20px;
+}
+
+.osu-md .Infobox {
+	padding: 10px;
+	margin: var(--paragraph-space) 0;
+	border: 1px solid hsl(var(--hsl-b4));
+	border-radius: 4px;
+	text-align: center;
+}
+
+@media (min-width: 640px) {
+	.osu-md .Infobox {
+		float: right;
+		clear: right;
+		width: 50%;
+		max-width: 300px;
+		margin: 0 0 5px 10px;
+	}
+}
+
+.osu-md .Infobox > :first-child {
+	margin-top: 0;
+}
+
+.osu-md .Infobox > :last-child {
+	margin-bottom: 0;
+}
+
+.osu-md .Infobox thead {
+	display: none;
+}
+
+.osu-md .Infobox tbody > tr:first-child > td {
+	border-top: none;
+}
+
+.osu-md .Infobox td {
+	vertical-align: top;
+}
+
+/* link, list, paragraph, table */
+
+/* This styling is not actually osu-md in osu-web, it's on all links */
+.osu-md a {
+	color: hsl(var(--hsl-l2));
+	outline-style: none;
+	text-decoration: none;
+	transition: color 80ms linear;
+}
+
+.osu-md a:hover {
+	color: hsl(var(--hsl-l1));
+	text-decoration: underline;
+}
+
+/*
+.osu-md {
+  &__figure-caption {
+    margin-top: 5px;
+    font-style: normal;
+    display: inline-block;
+  }
+
+  &__figure-container {
+    margin: var(--paragraph-space) 0;
+    text-align: center;
+  }
+
+  &__figure-image {
+    display: block;
+    margin: 0 auto;
+
+    &--gallery {
+      cursor: pointer;
+    }
+  }
+
+  &__footnote-container {
+    > ol {
+      padding-left: 0;
+      list-style: none;
+      counter-reset: c 0;
+    }
+  }
+
+  &__link {
+    &--footnote-ref {
+      font-size: 11px;
+
+      &::after {
+        content: "]";
+      }
+
+      &::before {
+        content: "[";
+      }
+    }
+  }
+
+  &__list {
+    padding-left: 20px;
+
+    &--ordered {
+      list-style: none;
+      padding-left: 0;
+      counter-reset: c var(--list-start);
+    }
+  }
+
+  &__list-item {
+    margin: 5px 0;
+
+    .@{_top}__list--ordered > &,
+    .@{_top}__footnote-container & {
+      counter-increment: c;
+      display: flex;
+
+      &::before {
+        content: counter(c) ". ";
+        min-width: 30px;
+        padding-right: 5px;
+        flex: none;
+      }
+
+      // can't have class due to how it's rendered
+      > div {
+        flex: 1;
+        min-width: 0;
+      }
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: var(--paragraph-space);
+    line-height: 1.5;
+
+    .@{_top}__list-item--footnote & {
+      margin-bottom: 0;
+      flex: 1;
+      min-width: 0;
+      line-height: inherit;
+    }
+  }
+
+  // not actual table but its container
+  &__table {
+    overflow-x: auto;
+    margin-bottom: 20px;
+  }
+
+  &__table-data {
+    border-top: 1px solid @osu-colour-b4;
+    padding: 5px;
+    min-width: 30px;
+
+    &--center {
+      text-align: center;
+    }
+
+    &--header {
+      .default-font();
+      border-top: none;
+      border-bottom: 2px solid @osu-colour-b3;
+      font-weight: bold;
+    }
+
+    &--left {
+      text-align: left;
+    }
+
+    &--right {
+      text-align: right;
+    }
+  }
+}
+*/

@@ -1,0 +1,48 @@
+{
+  "name": "osu-wiki-markdown-preview",
+  "displayName": "osu! wiki markdown preview",
+  "description": "Simulates the osu! website in the markdown preview window",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.87.0"
+  },
+  "categories": [
+    "Themes",
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "markdown.markdownItPlugins": true,
+    "markdown.previewStyles": [
+      "./share/style.css"
+    ]
+  },
+  "qna": false,
+  "icon": "./icon.png",
+  "galleryBanner": {
+    "color": "#18171C",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cl8n/vscode-osu-wiki-markdown-preview.git"
+  },
+  "scripts": {
+    "build": "tsc",
+    "vscode:prepublish": "npm run build",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "markdown-it-container": "^4.0.0",
+    "markdown-it-footnote": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^14.1.1",
+    "@types/markdown-it-container": "^2.0.10",
+    "@types/markdown-it-footnote": "^3.0.4",
+    "@types/node": "^20.14.12",
+    "@types/vscode": "^1.91.0",
+    "typescript": "^5.5.4"
+  }
+}
