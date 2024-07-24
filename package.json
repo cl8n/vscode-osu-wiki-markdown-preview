@@ -2,7 +2,7 @@
   "name": "osu-wiki-markdown-preview",
   "displayName": "osu! wiki markdown preview",
   "description": "Simulates the osu! website in the markdown preview window",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "cl8n",
   "engines": {
     "vscode": "^1.87.0"
@@ -43,7 +43,7 @@
     "@types/markdown-it-container": "^2.0.10",
     "@types/markdown-it-footnote": "^3.0.4",
     "@types/node": "^20.14.12",
-    "@types/vscode": "^1.91.0",
+    "@types/vscode": "^1.87.0",
     "typescript": "^5.5.4"
   }
 }
