@@ -3,6 +3,7 @@
   "displayName": "osu! wiki markdown preview",
   "description": "Simulates the osu! website in the markdown preview window",
   "version": "0.1.0",
+  "publisher": "cl8n",
   "engines": {
     "vscode": "^1.87.0"
   },
