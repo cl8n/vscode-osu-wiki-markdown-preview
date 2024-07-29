@@ -1,12 +1,12 @@
 // Forked from https://www.npmjs.com/package/@mdit/plugin-figure
 import type MarkdownIt from 'markdown-it';
 
-function getCaption(image: MarkdownIt.Token) {
+function getCaption(image: MarkdownIt.Token): string {
 	const title = image.attrGet('title');
 	return title ?? image.content;
 }
 
-function figure(state: MarkdownIt.StateCore) {
+const figure: MarkdownIt.Core.RuleCore = (state) => {
 	// do not process first and last token
 	for (let i = 1, { length } = state.tokens; i < length - 1; i++) {
 		const token = state.tokens[i];
@@ -71,8 +71,8 @@ function figure(state: MarkdownIt.StateCore) {
 
 		token.children.push(openCaption, captionText, closeCaption);
 	}
-}
+};
 
-export default function imageFigurePlugin(md: MarkdownIt) {
+export default function imageFigurePlugin(md: MarkdownIt): void {
 	md.core.ruler.before('linkify', 'figure', figure);
 }
