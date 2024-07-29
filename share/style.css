@@ -1,5 +1,6 @@
 /* Resets for extra padding in the window */
-html, body {
+html,
+body {
 	padding: 0;
 }
 
@@ -16,97 +17,97 @@ html, body {
 @font-face {
 	font-family: Torus;
 	font-weight: 400;
-	src: url("./torus/Torus-Regular.otf") format("opentype");
+	src: url('./torus/Torus-Regular.otf') format('opentype');
 }
 @font-face {
 	font-family: Torus;
 	font-weight: 600;
-	src: url("./torus/Torus-SemiBold.otf") format("opentype");
+	src: url('./torus/Torus-SemiBold.otf') format('opentype');
 }
 @font-face {
 	font-family: Torus;
 	font-weight: 700;
-	src: url("./torus/Torus-SemiBold.otf") format("opentype");
+	src: url('./torus/Torus-SemiBold.otf') format('opentype');
 }
 
 /* Inter fonts */
 @font-face {
 	font-family: Inter;
 	font-weight: 100;
-	src: url("./inter/Inter-Thin.ttf") format("truetype");
+	src: url('./inter/Inter-Thin.ttf') format('truetype');
 }
 @font-face {
 	font-family: Inter;
 	font-weight: 200;
-	src: url("./inter/Inter-ExtraLight.ttf") format("truetype");
+	src: url('./inter/Inter-ExtraLight.ttf') format('truetype');
 }
 @font-face {
 	font-family: Inter;
 	font-weight: 300;
-	src: url("./inter/Inter-Light.ttf") format("truetype");
+	src: url('./inter/Inter-Light.ttf') format('truetype');
 }
 @font-face {
 	font-family: Inter;
 	font-weight: 400;
-	src: url("./inter/Inter-Regular.ttf") format("truetype");
+	src: url('./inter/Inter-Regular.ttf') format('truetype');
 }
 @font-face {
 	font-family: Inter;
 	font-weight: 500;
-	src: url("./inter/Inter-Medium.ttf") format("truetype");
+	src: url('./inter/Inter-Medium.ttf') format('truetype');
 }
 @font-face {
 	font-family: Inter;
 	font-weight: 600;
-	src: url("./inter/Inter-SemiBold.ttf") format("truetype");
+	src: url('./inter/Inter-SemiBold.ttf') format('truetype');
 }
 @font-face {
 	font-family: Inter;
 	font-weight: 700;
-	src: url("./inter/Inter-Bold.ttf") format("truetype");
+	src: url('./inter/Inter-Bold.ttf') format('truetype');
 }
 @font-face {
 	font-family: Inter;
 	font-weight: 800;
-	src: url("./inter/Inter-ExtraBold.ttf") format("truetype");
+	src: url('./inter/Inter-ExtraBold.ttf') format('truetype');
 }
 @font-face {
 	font-family: Inter;
 	font-weight: 900;
-	src: url("./inter/Inter-Black.ttf") format("truetype");
+	src: url('./inter/Inter-Black.ttf') format('truetype');
 }
 
 .osu-md {
 	/* Color vars */
 	--base-hue: 45;
-	--hsl-p: var(--base-hue),100%,50%;
-	--hsl-h1: var(--base-hue),100%,70%;
-	--hsl-h2: var(--base-hue),50%,45%;
-	--hsl-c1: var(--base-hue),40%,100%;
-	--hsl-c2: var(--base-hue),40%,90%;
-	--hsl-l1: var(--base-hue),40%,80%;
-	--hsl-l2: var(--base-hue),40%,75%;
-	--hsl-l3: var(--base-hue),40%,70%;
-	--hsl-l4: var(--base-hue),40%,50%;
-	--hsl-d1: var(--base-hue),20%,35%;
-	--hsl-d2: var(--base-hue),20%,30%;
-	--hsl-d3: var(--base-hue),20%,25%;
-	--hsl-d4: var(--base-hue),20%,20%;
-	--hsl-d5: var(--base-hue),20%,15%;
-	--hsl-d6: var(--base-hue),20%,10%;
-	--hsl-f1: var(--base-hue),10%,60%;
-	--hsl-b1: var(--base-hue),10%,40%;
-	--hsl-b2: var(--base-hue),10%,30%;
-	--hsl-b3: var(--base-hue),10%,25%;
-	--hsl-b4: var(--base-hue),10%,20%;
-	--hsl-b5: var(--base-hue),10%,15%;
-	--hsl-b6: var(--base-hue),10%,10%;
+	--hsl-p: var(--base-hue), 100%, 50%;
+	--hsl-h1: var(--base-hue), 100%, 70%;
+	--hsl-h2: var(--base-hue), 50%, 45%;
+	--hsl-c1: var(--base-hue), 40%, 100%;
+	--hsl-c2: var(--base-hue), 40%, 90%;
+	--hsl-l1: var(--base-hue), 40%, 80%;
+	--hsl-l2: var(--base-hue), 40%, 75%;
+	--hsl-l3: var(--base-hue), 40%, 70%;
+	--hsl-l4: var(--base-hue), 40%, 50%;
+	--hsl-d1: var(--base-hue), 20%, 35%;
+	--hsl-d2: var(--base-hue), 20%, 30%;
+	--hsl-d3: var(--base-hue), 20%, 25%;
+	--hsl-d4: var(--base-hue), 20%, 20%;
+	--hsl-d5: var(--base-hue), 20%, 15%;
+	--hsl-d6: var(--base-hue), 20%, 10%;
+	--hsl-f1: var(--base-hue), 10%, 60%;
+	--hsl-b1: var(--base-hue), 10%, 40%;
+	--hsl-b2: var(--base-hue), 10%, 30%;
+	--hsl-b3: var(--base-hue), 10%, 25%;
+	--hsl-b4: var(--base-hue), 10%, 20%;
+	--hsl-b5: var(--base-hue), 10%, 15%;
+	--hsl-b6: var(--base-hue), 10%, 10%;
 
 	/* Other global vars */
 	/* TODO test other language default-font */
 	--font-content: Inter, sans-serif;
 	--font-default: Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'Hiragino Kaku Gothic ProN', Meiryo, 'Microsoft YaHei', 'Apple SD Gothic Neo', sans-serif;
-	--font-default-th: Torus, Inter, 'Helvetica Neue', 'Prompt', Tahoma, Arial, 'Hiragino Kaku Gothic ProN', Meiryo, 'Microsoft YaHei', "Apple SD Gothic Neo", sans-serif;
+	--font-default-th: Torus, Inter, 'Helvetica Neue', 'Prompt', Tahoma, Arial, 'Hiragino Kaku Gothic ProN', Meiryo, 'Microsoft YaHei', 'Apple SD Gothic Neo', sans-serif;
 	--font-default-vi: Quicksand, Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'PingFang TC', 'Microsoft JhengHei', 'Apple SD Gothic Neo', system-ui, sans-serif;
 	--font-default-zh: Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'Apple SD Gothic Neo', system-ui, sans-serif;
 	--font-default-zh-tw: Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'PingFang TC', 'Microsoft JhengHei', 'Apple SD Gothic Neo', system-ui, sans-serif;
@@ -160,7 +161,7 @@ html, body {
 	padding: 0;
 }
 
-.osu-md > *:last-child {
+.osu-md > :last-child {
 	margin-bottom: 0;
 }
 
