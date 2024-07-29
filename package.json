@@ -22,7 +22,7 @@
   "qna": false,
   "icon": "./icon.png",
   "galleryBanner": {
-    "color": "#18171C",
+    "color": "#221F2E",
     "theme": "dark"
   },
   "repository": {
