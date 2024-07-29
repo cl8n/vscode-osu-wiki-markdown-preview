@@ -5,6 +5,7 @@ import commentSkipPlugin from './commentSkipPlugin';
 import imageFigurePlugin from './imageFigurePlugin';
 import osuFlagPlugin from './osuFlagPlugin';
 import osuFootnotePlugin from './osuFootnotePlugin';
+import osuListPlugin from './osuListPlugin';
 import osuModifierPlugin from './osuModifierPlugin';
 
 export function activate() {
@@ -16,8 +17,9 @@ export function activate() {
 				.use(containerPlugin, 'Infobox')
 				.use(imageFigurePlugin)
 				.use(footnotePlugin)
-				.use(osuFlagPlugin)
 				.use(osuFootnotePlugin)
+				.use(osuListPlugin)
+				.use(osuFlagPlugin)
 				.use(osuModifierPlugin);
 		},
 	};
