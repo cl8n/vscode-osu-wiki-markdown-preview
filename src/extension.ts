@@ -2,6 +2,7 @@ import type MarkdownIt from 'markdown-it';
 import containerPlugin from 'markdown-it-container';
 import footnotePlugin from 'markdown-it-footnote';
 import commentSkipPlugin from './commentSkipPlugin';
+import imageFigurePlugin from './imageFigurePlugin';
 import osuFlagPlugin from './osuFlagPlugin';
 import osuFootnotePlugin from './osuFootnotePlugin';
 import osuModifierPlugin from './osuModifierPlugin';
@@ -13,6 +14,7 @@ export function activate() {
 				.set({ html: false })
 				.use(commentSkipPlugin)
 				.use(containerPlugin, 'Infobox')
+				.use(imageFigurePlugin)
 				.use(footnotePlugin)
 				.use(osuFlagPlugin)
 				.use(osuFootnotePlugin)

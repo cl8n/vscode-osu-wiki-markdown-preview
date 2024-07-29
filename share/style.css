@@ -140,6 +140,7 @@ html, body {
 }
 
 .osu-md img {
+	vertical-align: middle;
 	max-width: 100%;
 }
 
@@ -163,7 +164,23 @@ html, body {
 	margin-bottom: 0;
 }
 
-/* figure, footnote */
+.osu-md__figure-caption {
+	display: inline-block;
+	margin-top: 5px;
+	font-style: normal;
+}
+
+.osu-md__figure-container {
+	margin: var(--paragraph-space) 0;
+	text-align: center;
+}
+
+.osu-md__figure-image {
+	display: block;
+	margin: 0 auto;
+}
+
+/* footnote */
 
 .osu-md h1,
 .osu-md h2,
@@ -333,26 +350,6 @@ html, body {
 
 /*
 .osu-md {
-  &__figure-caption {
-    margin-top: 5px;
-    font-style: normal;
-    display: inline-block;
-  }
-
-  &__figure-container {
-    margin: var(--paragraph-space) 0;
-    text-align: center;
-  }
-
-  &__figure-image {
-    display: block;
-    margin: 0 auto;
-
-    &--gallery {
-      cursor: pointer;
-    }
-  }
-
   &__footnote-container {
     > ol {
       padding-left: 0;
