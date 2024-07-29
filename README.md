@@ -10,7 +10,6 @@ Assets used in this project are modified versions of those in the [osu-web repos
 - Custom element IDs
 - International fonts
 - News styling
-- osu! style footnotes
 - Automatic header IDs matching osu!
 - Some remaining osu-md styling
 - Likely more that I'm unaware of
