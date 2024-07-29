@@ -73,7 +73,8 @@ const htmlInlineComment: MarkdownIt.ParserInline.RuleInline = (state) => {
 	return true;
 };
 
-export default function commentSkipPlugin(md: MarkdownIt): void {
+const commentSkipPlugin: MarkdownIt.PluginSimple = (md) => {
 	md.block.ruler.after('html_block', 'html_block_comment', htmlBlockComment);
 	md.inline.ruler.after('html_inline', 'html_inline_comment', htmlInlineComment);
-}
+};
+export default commentSkipPlugin;

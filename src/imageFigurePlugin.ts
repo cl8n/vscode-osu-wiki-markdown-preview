@@ -73,6 +73,7 @@ const figure: MarkdownIt.Core.RuleCore = (state) => {
 	}
 };
 
-export default function imageFigurePlugin(md: MarkdownIt): void {
+const imageFigurePlugin: MarkdownIt.PluginSimple = (md) => {
 	md.core.ruler.before('linkify', 'figure', figure);
-}
+};
+export default imageFigurePlugin;

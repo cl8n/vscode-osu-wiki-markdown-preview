@@ -47,6 +47,7 @@ const inlineFlag: MarkdownIt.ParserInline.RuleInline = (state) => {
 	return true;
 };
 
-export default function osuFlagPlugin(md: MarkdownIt): void {
+const osuFlagPlugin: MarkdownIt.PluginSimple = (md) => {
 	md.inline.ruler.after('text', 'flag', inlineFlag);
-}
+};
+export default osuFlagPlugin;
