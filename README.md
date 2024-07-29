@@ -6,7 +6,6 @@ Assets used in this project are modified versions of those in the [osu-web repos
 
 ## Missing features
 
-- Country flags
 - Figure displays for block images
 - osu! style tooltips
 - Custom element IDs
