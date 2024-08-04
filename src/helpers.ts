@@ -1,5 +1,10 @@
 import type MarkdownIt from 'markdown-it';
 
+export function getRenderRule(md: MarkdownIt, name: string): MarkdownIt.Renderer.RenderRule {
+	return md.renderer.rules[name]
+		?? ((tokens, idx, options, _env, self) => self.renderToken(tokens, idx, options));
+}
+
 export function tokenAttrRemove(token: MarkdownIt.Token, name: string): void {
 	if (token.attrs == null) {
 		return;

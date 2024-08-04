@@ -1,8 +1,18 @@
 import type MarkdownIt from 'markdown-it';
-import { tokenAttrRemove } from './helpers';
+import { getRenderRule, tokenAttrRemove } from './helpers';
 
-const osuOrderedList: MarkdownIt.Core.RuleCore = (state) => {
+const osuList: MarkdownIt.Core.RuleCore = (state) => {
 	for (const token of state.tokens) {
+		if (token.type === 'bullet_list_open') {
+			token.attrJoin('class', 'osu-md__list');
+			continue;
+		}
+
+		if (token.type === 'list_item_open') {
+			token.attrJoin('class', 'osu-md__list-item');
+			continue;
+		}
+
 		if (token.type !== 'ordered_list_open') {
 			continue;
 		}
@@ -15,18 +25,22 @@ const osuOrderedList: MarkdownIt.Core.RuleCore = (state) => {
 			tokenAttrRemove(token, 'start');
 		}
 
+		token.attrJoin('class', 'osu-md__list osu-md__list--ordered');
 		token.attrJoin('style', `--list-start: ${start};`);
 	}
 };
 
 const osuListPlugin: MarkdownIt.PluginSimple = (md) => {
-	// TODO breaks vscode code line
+	md.core.ruler.push('osu_list', osuList);
 
-	md.core.ruler.push('osu_ordered_list', osuOrderedList);
+	const originalListItemOpen = getRenderRule(md, 'list_item_open');
+	const originalListItemClose = getRenderRule(md, 'list_item_close');
 
-	md.renderer.rules.bullet_list_open = () => '<ul class="osu-md__list">';
-	md.renderer.rules.ordered_list_open = () => '<ol class="osu-md__list osu-md__list--ordered">';
-	md.renderer.rules.list_item_open = () => '<li class="osu-md__list-item"><div>';
-	md.renderer.rules.list_item_close = () => '</div></li>';
+	md.renderer.rules.list_item_open = (...args) => (
+		`${originalListItemOpen(...args)}<div>`
+	);
+	md.renderer.rules.list_item_close = (...args) => (
+		`</div>${originalListItemClose(...args)}`
+	);
 };
 export default osuListPlugin;
