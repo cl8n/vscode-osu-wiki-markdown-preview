@@ -7,6 +7,7 @@ import osuFlagPlugin from './osuFlagPlugin';
 import osuFootnotePlugin from './osuFootnotePlugin';
 import osuListPlugin from './osuListPlugin';
 import osuModifierPlugin from './osuModifierPlugin';
+import osuParagraphPlugin from './osuParagraphPlugin';
 
 export function activate() {
 	return {
@@ -20,7 +21,8 @@ export function activate() {
 				.use(osuFootnotePlugin)
 				.use(osuListPlugin)
 				.use(osuFlagPlugin)
-				.use(osuModifierPlugin);
+				.use(osuModifierPlugin)
+				.use(osuParagraphPlugin);
 		},
 	};
 }

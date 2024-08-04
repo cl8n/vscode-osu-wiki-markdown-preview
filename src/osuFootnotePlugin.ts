@@ -12,7 +12,13 @@ const render_footnote_ref: MarkdownIt.Renderer.RenderRule = (tokens, idx) => {
 	const id = getFootnoteId(tokens, idx);
 	const refid = getFootnoteRefId(tokens, idx, id);
 
-	return `<sup id="${refid}"><a href="#fn-${id}" class="osu-md__link--footnote-ref">${id}</a></sup>`;
+	return (
+		`<sup id="${refid}">` +
+		`<a href="#fn-${id}" class="osu-md__link osu-md__link--footnote-ref">` +
+		id +
+		'</a>' +
+		'</sup>'
+	);
 };
 
 const render_footnote_block_open: MarkdownIt.Renderer.RenderRule = () => {
@@ -22,7 +28,7 @@ const render_footnote_block_open: MarkdownIt.Renderer.RenderRule = () => {
 const render_footnote_open: MarkdownIt.Renderer.RenderRule = (tokens, idx) => {
 	const id = getFootnoteId(tokens, idx);
 
-	return `<li id="fn-${id}" class="osu-md__list-item--footnote">`;
+	return `<li id="fn-${id}" class="osu-md__list-item osu-md__list-item--footnote">`;
 };
 
 const render_footnote_anchor: MarkdownIt.Renderer.RenderRule = (tokens, idx) => {
