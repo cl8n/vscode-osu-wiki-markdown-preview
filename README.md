@@ -11,7 +11,7 @@ Assets used in this project are modified versions of those in the [osu-web repos
 - International fonts
 - News styling
 - Automatic header IDs matching osu!
-- Some remaining osu-md styling
+- Some remaining osu-md styling (notably, tables)
 - Likely more that I'm unaware of
 
 ## Known issues
