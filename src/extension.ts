@@ -6,6 +6,7 @@ import imageFigurePlugin from './imageFigurePlugin';
 import osuFlagPlugin from './osuFlagPlugin';
 import osuFootnotePlugin from './osuFootnotePlugin';
 import osuListPlugin from './osuListPlugin';
+import osuMainPagePlugin from './osuMainPagePlugin';
 import osuModifierPlugin from './osuModifierPlugin';
 import osuParagraphPlugin from './osuParagraphPlugin';
 
@@ -21,8 +22,9 @@ export function activate() {
 				.use(osuFootnotePlugin)
 				.use(osuListPlugin)
 				.use(osuFlagPlugin)
-				.use(osuModifierPlugin)
-				.use(osuParagraphPlugin);
+				.use(osuParagraphPlugin)
+				.use(osuMainPagePlugin)
+				.use(osuModifierPlugin);
 		},
 	};
 }
