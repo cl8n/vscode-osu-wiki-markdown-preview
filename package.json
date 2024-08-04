@@ -4,6 +4,7 @@
   "description": "Simulates the osu! website in the markdown preview window",
   "version": "0.2.0",
   "publisher": "cl8n",
+  "license": "MIT-0",
   "engines": {
     "vscode": "^1.87.0"
   },
