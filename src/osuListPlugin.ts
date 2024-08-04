@@ -1,8 +1,5 @@
 import type MarkdownIt from 'markdown-it';
-
-function removeAttribute(token: MarkdownIt.Token, attribute: string): void {
-	token.attrs = token.attrs?.filter(([key]) => key !== attribute) ?? null;
-}
+import { tokenAttrRemove } from './helpers';
 
 const osuOrderedList: MarkdownIt.Core.RuleCore = (state) => {
 	for (const token of state.tokens) {
@@ -14,11 +11,11 @@ const osuOrderedList: MarkdownIt.Core.RuleCore = (state) => {
 		let start = 0;
 
 		if (startAttr !== null) {
-			start = Number.parseInt(startAttr) - 1;
-			removeAttribute(token, 'start');
+			start = Number.parseInt(startAttr, 10) - 1;
+			tokenAttrRemove(token, 'start');
 		}
 
-		token.attrSet('style', `--list-start: ${start}`);
+		token.attrJoin('style', `--list-start: ${start};`);
 	}
 };
 
