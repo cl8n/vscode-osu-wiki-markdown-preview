@@ -15,6 +15,7 @@ This extension simulates the osu! website in the markdown preview window. You sh
 ## Known issues
 
 - VSCode's "code line" style can block inputs to floating content, like infoboxes
+- VSCode's "code line" style causes ordered lists to lose their counter and shift left on hover
 
 ## Building the extension
 
