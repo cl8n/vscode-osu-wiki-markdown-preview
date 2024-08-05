@@ -4,12 +4,10 @@ This extension simulates the osu! website in the markdown preview window. You sh
 
 ## Missing features
 
-- osu! style tooltips
-- Custom element IDs
 - International fonts
 - News cover and author
-- Automatic header IDs matching osu!
-- Tooltips on country flags
+- Custom element IDs
+- Correct automatic header IDs
 
 ## Known issues
 
