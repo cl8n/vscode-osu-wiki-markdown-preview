@@ -7,10 +7,9 @@ This extension simulates the osu! website in the markdown preview window. You sh
 - osu! style tooltips
 - Custom element IDs
 - International fonts
-- News styling
+- News cover and author
 - Automatic header IDs matching osu!
-- Some remaining osu-md styling (notably, tables)
-- Likely more that I'm unaware of
+- Table styling
 
 ## Known issues
 
