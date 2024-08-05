@@ -3,15 +3,6 @@ html, body {
 	padding: 0;
 }
 
-/* More fitting color for code lines in the left margin (taken from ranking graph) */
-.showEditorSelection .code-active-line:before {
-	border-left: 3px solid #fc2a !important;
-}
-
-.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid #fc2 !important;
-}
-
 .osu-layout--body {
 	background-color: hsl(var(--hsl-b6));
 }
