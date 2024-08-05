@@ -458,6 +458,10 @@
 	content: '';
 }
 
+.flag-country--flat {
+	box-shadow: none;
+}
+
 .flag-country--wiki {
 	display: inline-block;
 	border-radius: unset;

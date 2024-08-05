@@ -37,7 +37,7 @@ const inlineFlag: MarkdownIt.ParserInline.RuleInline = (state) => {
 	// Add a token for the custom syntax
 	const token = state.push('flag_open', 'span', 1);
 	token.attrs = [
-		['class', 'flag-country flag-country--wiki'],
+		['class', 'flag-country flag-country--flat flag-country--wiki'],
 		['style', `background-image: url('${getFlagUrl(flagCodepoint)}')`],
 	];
 
