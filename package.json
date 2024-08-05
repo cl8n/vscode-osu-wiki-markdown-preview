@@ -20,7 +20,8 @@
       "./share/fonts.css",
       "./node_modules/bootstrap/dist/css/bootstrap.min.css",
       "./share/osu-web-base.css",
-      "./share/osu-web.css"
+      "./share/osu-web.css",
+      "./share/override.css"
     ]
   },
   "qna": false,

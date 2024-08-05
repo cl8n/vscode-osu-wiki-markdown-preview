@@ -1,0 +1,23 @@
+/* Hide the sidebar on mobile */
+
+.wiki-page__toc {
+	display: none;
+}
+
+@media (min-width: 900px) {
+	.wiki-page__toc {
+		display: block;
+	}
+}
+
+/* Add note to sidebar on hover */
+
+.wiki-page__toc::before {
+	content: "The sidebar's content is not implemented in this extension. But it's still here to show you what the page would look like.";
+	opacity: 0;
+	transition: opacity 160ms linear;
+}
+
+.wiki-page__toc:hover::before {
+	opacity: 1;
+}
