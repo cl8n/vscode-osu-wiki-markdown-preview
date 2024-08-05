@@ -9,7 +9,7 @@ This extension simulates the osu! website in the markdown preview window. You sh
 - International fonts
 - News cover and author
 - Automatic header IDs matching osu!
-- Table styling
+- Tooltips on country flags
 
 ## Known issues
 
