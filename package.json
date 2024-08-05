@@ -17,9 +17,10 @@
   "contributes": {
     "markdown.markdownItPlugins": true,
     "markdown.previewStyles": [
+      "./share/fonts.css",
       "./node_modules/bootstrap/dist/css/bootstrap.min.css",
       "./share/osu-web-base.css",
-      "./share/style.css"
+      "./share/osu-web.css"
     ]
   },
   "qna": false,

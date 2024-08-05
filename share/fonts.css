@@ -1,0 +1,45 @@
+/* Torus */
+
+@font-face {
+	font-family: Torus;
+	font-weight: 300;
+	src: url("./torus/Torus-Light.otf") format("opentype");
+}
+@font-face {
+	font-family: Torus;
+	font-weight: 400;
+	src: url("./torus/Torus-Regular.otf") format("opentype");
+}
+@font-face {
+	font-family: Torus;
+	font-weight: 600;
+	src: url("./torus/Torus-SemiBold.otf") format("opentype");
+}
+@font-face {
+	font-family: Torus;
+	font-weight: 700;
+	src: url("./torus/Torus-SemiBold.otf") format("opentype");
+}
+
+/* Inter */
+
+@font-face {
+	font-family: Inter;
+	font-weight: 300;
+	src: url("./inter/Inter-Light.ttf") format("truetype");
+}
+@font-face {
+	font-family: Inter;
+	font-weight: 400;
+	src: url("./inter/Inter-Regular.ttf") format("truetype");
+}
+@font-face {
+	font-family: Inter;
+	font-weight: 600;
+	src: url("./inter/Inter-SemiBold.ttf") format("truetype");
+}
+@font-face {
+	font-family: Inter;
+	font-weight: 700;
+	src: url("./inter/Inter-Bold.ttf") format("truetype");
+}
