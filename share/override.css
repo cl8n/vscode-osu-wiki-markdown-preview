@@ -31,3 +31,27 @@
 .wiki-page__toc:hover::before {
 	opacity: 1;
 }
+
+/* Uniform 20px padding on mobile content */
+
+.wiki-page__content {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.osu-page--wiki-main {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/* TODO/temporary: Remove top margin from news info until the card is added */
+
+.news-show__info {
+	margin-top: 0;
+}
+
+/* Remove top padding from main page intro (no search bar above it) */
+
+.wiki-main-page__blurb {
+	padding-top: 0;
+}
