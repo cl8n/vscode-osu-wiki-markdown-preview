@@ -1,7 +1,7 @@
 import type MarkdownIt from 'markdown-it';
 
 const osuMainPage: MarkdownIt.Core.RuleCore = (state) => {
-	if (state.env.osuLayout !== 'main_page') {
+	if (state.env.osu.layout !== 'main_page') {
 		return;
 	}
 

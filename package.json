@@ -38,7 +38,8 @@
   "dependencies": {
     "markdown-it-container": "^4.0.0",
     "markdown-it-footnote": "^4.0.0",
-    "markdown-it-front-matter": "^0.2.4"
+    "markdown-it-front-matter": "^0.2.4",
+    "yaml": "^2.5.0"
   },
   "devDependencies": {
     "@types/markdown-it": "^14.1.2",

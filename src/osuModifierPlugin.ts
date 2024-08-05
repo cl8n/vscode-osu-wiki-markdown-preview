@@ -1,38 +1,52 @@
 import type MarkdownIt from 'markdown-it';
 import frontMatterPlugin from 'markdown-it-front-matter';
+import { parse as parseYaml } from 'yaml';
 
-function resetEnvironment(md: MarkdownIt, env: any): void {
-	env.osuLayout = 'markdown_page';
-	md.set({ html: false });
-}
-
-function setEnvironment(md: MarkdownIt, env: any, tokens: MarkdownIt.Token[]): void {
+function getFrontMatterSettings(tokens: MarkdownIt.Token[]): Record<string, any> {
 	const firstToken = tokens[0];
 
 	if (firstToken?.type !== 'front_matter') {
-		return;
+		return {};
 	}
 
-	const layoutMatch = firstToken.meta.match(/^layout: (main_page|markdown_page|post)$/m);
+	// If the front matter has been parsed before, return it
+	if (
+		typeof firstToken.meta === 'object' &&
+		firstToken.meta != null &&
+		'parsed' in firstToken.meta
+	) {
+		return firstToken.meta.parsed;
+	}
 
-	if (layoutMatch != null) {
-		env.osuLayout = layoutMatch[1];
-
-		if (env.osuLayout === 'main_page') {
-			md.set({ html: true });
+	// Replace the token meta with a parsed version if it's still in raw form
+	if (typeof firstToken.meta === 'string') {
+		try {
+			firstToken.meta = { parsed: parseYaml(firstToken.meta) };
+		} catch {
+			firstToken.meta = { parsed: {} };
 		}
+
+		return firstToken.meta.parsed;
 	}
+
+	return {};
+}
+
+function setEnvironment(md: MarkdownIt, env: any, settings: Record<string, any>): void {
+	env.osu = settings;
+	env.osu.layout ??= 'markdown_page';
+	md.set({ html: env.osu.layout === 'main_page' });
 }
 
 const osuEnvReset: MarkdownIt.Core.RuleCore = (state) => {
 	if (state.tokens.length === 0) {
-		resetEnvironment(state.md, state.env);
+		setEnvironment(state.md, state.env, {});
 	}
 };
 
 const osuEnvSet: MarkdownIt.ParserBlock.RuleBlock = (state) => {
 	if (state.tokens.length === 1) {
-		setEnvironment(state.md, state.env, state.tokens);
+		setEnvironment(state.md, state.env, getFrontMatterSettings(state.tokens));
 	}
 
 	return false;
@@ -59,12 +73,11 @@ const osuModifierPlugin: MarkdownIt.PluginSimple = (md) => {
 
 	md.renderer.render = (tokens, options, env) => {
 		// VSCode does not persist the environment between parse and render, so it is re-created here
-		resetEnvironment(md, env);
-		setEnvironment(md, env, tokens);
+		setEnvironment(md, env, getFrontMatterSettings(tokens));
 
 		let modifier = 'wiki';
 
-		if (env.osuLayout === 'post') {
+		if (env.osu.layout === 'post') {
 			modifier = 'news';
 		}
 
