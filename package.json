@@ -16,7 +16,11 @@
   "main": "./out/extension.js",
   "contributes": {
     "markdown.markdownItPlugins": true,
+    "markdown.previewScripts": [
+      "./share/vscode-remove-default-styles.js"
+    ],
     "markdown.previewStyles": [
+      "./share/vscode-slim.css",
       "./share/fonts.css",
       "./node_modules/bootstrap/dist/css/bootstrap.min.css",
       "./share/osu-web-base.css",

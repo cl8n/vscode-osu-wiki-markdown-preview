@@ -1,8 +1,3 @@
-/* Resets for extra padding in the window */
-html, body {
-	padding: 0;
-}
-
 .osu-layout--body {
 	background-color: hsl(var(--hsl-b6));
 }
