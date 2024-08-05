@@ -2,7 +2,7 @@
   "name": "osu-wiki-markdown-preview",
   "displayName": "osu! wiki markdown preview",
   "description": "Simulates the osu! website in the markdown preview window",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "publisher": "cl8n",
   "license": "MIT-0",
   "engines": {
