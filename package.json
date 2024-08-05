@@ -31,9 +31,9 @@
     "url": "https://github.com/cl8n/vscode-osu-wiki-markdown-preview.git"
   },
   "scripts": {
-    "build": "rm -r out && tsc",
+    "build": "tsc --build --clean && tsc --project ./",
     "vscode:prepublish": "npm run build",
-    "watch": "tsc --watch"
+    "watch": "tsc --watch --project ./"
   },
   "dependencies": {
     "markdown-it-container": "^4.0.0",
