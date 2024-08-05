@@ -14,7 +14,6 @@ export function activate() {
 	return {
 		extendMarkdownIt(md: MarkdownIt): MarkdownIt {
 			return md
-				.set({ html: false })
 				.use(commentSkipPlugin)
 				.use(containerPlugin, 'infobox', {
 					render: (tokens, idx, options, _env, self) => {

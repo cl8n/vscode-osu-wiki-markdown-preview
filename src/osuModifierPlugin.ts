@@ -35,7 +35,7 @@ function getFrontMatterSettings(tokens: MarkdownIt.Token[]): Record<string, any>
 function setEnvironment(md: MarkdownIt, env: any, settings: Record<string, any>): void {
 	env.osu = settings;
 	env.osu.layout ??= 'markdown_page';
-	md.set({ html: env.osu.layout === 'main_page' });
+	md.set({ html: env.osu.layout !== 'markdown_page' });
 }
 
 const osuEnvReset: MarkdownIt.Core.RuleCore = (state) => {
