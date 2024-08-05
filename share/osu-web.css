@@ -308,7 +308,9 @@
 }
 
 /* @media (min-width: 300px * 2 + @gutter-v2 * 2) */
-@media (min-width: 620px) {
+/* @gutter-v2 is 10px, but it is effectively 20px for the purpose of this style due to increased
+   padding on .wiki-page__content in override.css */
+@media (min-width: 640px) {
 	.osu-md__infobox {
 		float: right;
 		clear: right;
