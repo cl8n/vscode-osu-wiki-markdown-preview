@@ -75,19 +75,64 @@ const osuModifierPlugin: MarkdownIt.PluginSimple = (md) => {
 		// VSCode does not persist the environment between parse and render, so it is re-created here
 		setEnvironment(md, env, getFrontMatterSettings(tokens));
 
-		let modifier = 'wiki';
+		const html = originalRender.apply(md.renderer, [tokens, options, env]);
 
-		if (env.osu.layout === 'post') {
-			modifier = 'news';
+		if (env.osu.layout === 'main_page') {
+			return (
+				'<div class="osu-layout osu-layout--body" style="--base-hue-default: 45;">' +
+				'<div class="osu-page osu-page--wiki osu-page--wiki-main">' +
+				'<div class="wiki-main-page">' +
+				html +
+				'</div>' +
+				'</div>' +
+				'</div>'
+			);
 		}
 
-		// TODO split osu-md into another more general base class so that main page can
-		// stop using it
-		return (
-			`<div class="osu-md osu-md--${modifier}">` +
-			originalRender.apply(md.renderer, [tokens, options, env]) +
-			'</div>'
-		);
+		if (env.osu.layout === 'markdown_page') {
+			return (
+				'<div class="osu-layout osu-layout--body" style="--base-hue-default: 45;">' +
+				'<div class="osu-page osu-page--wiki">' +
+				'<div class="wiki-page">' +
+				'<div class="wiki-page__toc"></div>' +
+				'<div class="wiki-page__content">' +
+				`<div class="osu-md osu-md--wiki">` +
+				html +
+				'</div>' +
+				'</div>' +
+				'</div>' +
+				'</div>' +
+				'</div>'
+			);
+		}
+
+		if (env.osu.layout === 'post') {
+			return (
+				'<div class="osu-layout osu-layout--body" style="--base-hue-default: 255;">' +
+				'<div class="osu-page osu-page--wiki">' +
+				'<div class="wiki-page">' +
+				'<div class="wiki-page__toc"></div>' +
+				'<div class="wiki-page__content">' +
+				'<div class="news-show">' +
+				// TODO: Support news cover
+				// `<a class="news-card news-card--show" href="..."><div class="news-card__cover-container"><img class="news-card__cover" src="..."><div class="news-card__time js-tooltip-time" title="...">...</div></div></a>` +
+				'<div class="news-show__info">' +
+				`<h1 class="news-show__title">${env.osu.title ?? 'Untitled news post'}</h1>` +
+				// TODO: Support news author
+				// `<p class="news-show__author">by <strong>...</strong></p>` +
+				'</div>' +
+				`<div class="osu-md osu-md--news">` +
+				html +
+				'</div>' +
+				'</div>' +
+				'</div>' +
+				'</div>' +
+				'</div>' +
+				'</div>'
+			);
+		}
+
+		throw new Error('Invalid osu! layout type');
 	};
 };
 export default osuModifierPlugin;

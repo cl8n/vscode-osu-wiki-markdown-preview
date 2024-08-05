@@ -17,6 +17,8 @@
   "contributes": {
     "markdown.markdownItPlugins": true,
     "markdown.previewStyles": [
+      "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+      "./share/osu-web-base.css",
       "./share/style.css"
     ]
   },
@@ -36,6 +38,7 @@
     "watch": "tsc --watch --project ./"
   },
   "dependencies": {
+    "bootstrap": "3.4.1",
     "markdown-it-container": "^4.0.0",
     "markdown-it-footnote": "^4.0.0",
     "markdown-it-front-matter": "^0.2.4",

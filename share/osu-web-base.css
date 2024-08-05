@@ -1,0 +1,124 @@
+/* base.less */
+
+blockquote {
+	font-size: inherit;
+	border-left: 2px solid hsl(var(--hsl-c2));
+}
+
+h1 {
+	font-size: 30px;
+	font-weight: normal;
+	margin: 0 0 20px 0;
+}
+
+h2 {
+	font-weight: normal;
+	margin: 10px 0 0 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: hsl(var(--hsl-c1));
+}
+
+a {
+	color: hsl(var(--hsl-l2));
+	outline-style: none;
+
+	text-decoration: none;
+
+	transition: color 80ms linear;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: hsl(var(--hsl-l1));
+}
+
+a:link, a:visited, a:hover, a:active {
+	outline-style: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+code {
+	padding: 0;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	border-radius: 0;
+}
+
+iframe {
+	border: none;
+}
+
+/* layout.less */
+
+*, ::before, ::after {
+	box-sizing: border-box;
+}
+
+::selection {
+	color: #fff;
+	background-color: hsl(var(--hsl-h2));
+}
+
+::placeholder {
+	color: inherit;
+	opacity: 0.54;
+}
+
+:root {
+	/* TODO test other language default font */
+	--font-default: Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'Hiragino Kaku Gothic ProN', Meiryo, 'Microsoft YaHei', 'Apple SD Gothic Neo', sans-serif;
+	--font-default-vi: Quicksand, Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'PingFang TC', 'Microsoft JhengHei', 'Apple SD Gothic Neo', system-ui, sans-serif;
+	--font-default-zh: Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'Apple SD Gothic Neo', system-ui, sans-serif;
+	--font-default-th: Torus, Inter, 'Helvetica Neue', 'Prompt', Tahoma, Arial, 'Hiragino Kaku Gothic ProN', Meiryo, 'Microsoft YaHei', "Apple SD Gothic Neo", sans-serif;
+	--font-default-zh-tw: Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'PingFang TC', 'Microsoft JhengHei', 'Apple SD Gothic Neo', system-ui, sans-serif;
+	--font-content: Inter, sans-serif;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: var(--font-default-override, var(--font-default));
+}
+
+/* body replaced with .osu-layout because it's the top-most node rendered by this extension */
+.osu-layout {
+	--base-hue: var(--base-hue-override, var(--base-hue-default));
+	--base-hue-deg: calc(var(--base-hue) * 1deg);
+}
+
+/* colors.less */
+
+/* body replaced with .osu-layout because it's the top-most node rendered by this extension */
+.osu-layout {
+	--hsl-p: var(--base-hue), 100%, 50%;
+	--hsl-h1: var(--base-hue), 100%, 70%;
+	--hsl-h2: var(--base-hue), 50%, 45%;
+	--hsl-c1: var(--base-hue), 40%, 100%;
+	--hsl-c2: var(--base-hue), 40%, 90%;
+	--hsl-l1: var(--base-hue), 40%, 80%;
+	--hsl-l2: var(--base-hue), 40%, 75%;
+	--hsl-l3: var(--base-hue), 40%, 70%;
+	--hsl-l4: var(--base-hue), 40%, 50%;
+	--hsl-d1: var(--base-hue), 20%, 35%;
+	--hsl-d2: var(--base-hue), 20%, 30%;
+	--hsl-d3: var(--base-hue), 20%, 25%;
+	--hsl-d4: var(--base-hue), 20%, 20%;
+	--hsl-d5: var(--base-hue), 20%, 15%;
+	--hsl-d6: var(--base-hue), 20%, 10%;
+	--hsl-f1: var(--base-hue), 10%, 60%;
+	--hsl-b1: var(--base-hue), 10%, 40%;
+	--hsl-b2: var(--base-hue), 10%, 30%;
+	--hsl-b3: var(--base-hue), 10%, 25%;
+	--hsl-b4: var(--base-hue), 10%, 20%;
+	--hsl-b5: var(--base-hue), 10%, 15%;
+	--hsl-b6: var(--base-hue), 10%, 10%;
+}

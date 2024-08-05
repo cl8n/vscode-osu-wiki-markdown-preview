@@ -56,52 +56,167 @@ html, body {
 	src: url("./inter/Inter-Bold.ttf") format("truetype");
 }
 
-.osu-md {
-	/* Color vars */
-	--base-hue: 45;
-	--hsl-p: var(--base-hue),100%,50%;
-	--hsl-h1: var(--base-hue),100%,70%;
-	--hsl-h2: var(--base-hue),50%,45%;
-	--hsl-c1: var(--base-hue),40%,100%;
-	--hsl-c2: var(--base-hue),40%,90%;
-	--hsl-l1: var(--base-hue),40%,80%;
-	--hsl-l2: var(--base-hue),40%,75%;
-	--hsl-l3: var(--base-hue),40%,70%;
-	--hsl-l4: var(--base-hue),40%,50%;
-	--hsl-d1: var(--base-hue),20%,35%;
-	--hsl-d2: var(--base-hue),20%,30%;
-	--hsl-d3: var(--base-hue),20%,25%;
-	--hsl-d4: var(--base-hue),20%,20%;
-	--hsl-d5: var(--base-hue),20%,15%;
-	--hsl-d6: var(--base-hue),20%,10%;
-	--hsl-f1: var(--base-hue),10%,60%;
-	--hsl-b1: var(--base-hue),10%,40%;
-	--hsl-b2: var(--base-hue),10%,30%;
-	--hsl-b3: var(--base-hue),10%,25%;
-	--hsl-b4: var(--base-hue),10%,20%;
-	--hsl-b5: var(--base-hue),10%,15%;
-	--hsl-b6: var(--base-hue),10%,10%;
+.osu-layout--body {
+	background-color: hsl(var(--hsl-b6));
+}
 
-	/* Other global vars */
-	/* TODO test other language default-font */
-	--font-content: Inter, sans-serif;
-	--font-default: Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'Hiragino Kaku Gothic ProN', Meiryo, 'Microsoft YaHei', 'Apple SD Gothic Neo', sans-serif;
-	--font-default-th: Torus, Inter, 'Helvetica Neue', 'Prompt', Tahoma, Arial, 'Hiragino Kaku Gothic ProN', Meiryo, 'Microsoft YaHei', "Apple SD Gothic Neo", sans-serif;
-	--font-default-vi: Quicksand, Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'PingFang TC', 'Microsoft JhengHei', 'Apple SD Gothic Neo', system-ui, sans-serif;
-	--font-default-zh: Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'Hiragino Sans GB', 'Microsoft YaHei', 'Apple SD Gothic Neo', system-ui, sans-serif;
-	--font-default-zh-tw: Torus, Inter, 'Helvetica Neue', Tahoma, Arial, 'PingFang TC', 'Microsoft JhengHei', 'Apple SD Gothic Neo', system-ui, sans-serif;
+.osu-page {
+	align-self: center;
+	margin-left: auto;
+	margin-right: auto;
+	flex: none;
 
-	/* osu-md vars */
-	--code-background-colour: hsl(var(--hsl-b6));
-	--paragraph-space: 1.5em;
+	width: 100%;
+	max-width: 1000px;
+}
 
+@media (min-width: 900px) {
+	.osu-page {
+		width: calc(100% - 40px);
+		max-width: 1000px;
+	}
+}
+
+.osu-page--wiki {
 	background-color: hsl(var(--hsl-b5));
 	color: hsl(var(--hsl-c1));
-	font-family: var(--font-content);
+	box-shadow: 0 1px 3px rgba(0,0,0,.25);
 	font-size: 14px;
+}
+
+.osu-page--wiki-main {
+	padding: 20px 10px;
+}
+
+@media (min-width: 900px) {
+	.osu-page--wiki-main {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+}
+
+.wiki-page {
+	display: grid;
+}
+
+@media (min-width: 900px) {
+	.wiki-page {
+		grid-template-columns: 250px 1fr;
+	}
+}
+
+.wiki-page__content {
+	min-width: 0;
+	padding: 20px 10px;
+}
+
+@media (min-width: 900px) {
+	.wiki-page__content {
+		padding-left: 30px;
+		padding-right: 50px;
+	}
+}
+
+.wiki-page__toc {
+	background-color: hsl(var(--hsl-b4));
+	border-radius: 6px;
+	padding: 10px;
+	margin: 10px;
+}
+
+@media (min-width: 900px) {
+	.wiki-page__toc {
+		border-radius: 0;
+		top: 0; /* top: @nav2-height--pinned; */
+		position: sticky;
+		padding: 20px 30px 20px 50px;
+		margin: 0;
+		overflow-y: scroll;
+		max-height: 100vh; /* max-height: calc(100vh - @nav2-height--pinned); */
+	}
+}
+
+.news-show__info {
+	margin: 20px 0;
+}
+
+.news-show__title {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 35px;
+	color: inherit;
+	padding: 0;
+	margin: 0;
+}
+
+.news-card {
+	text-decoration: none;
+	color: #fff;
+	display: block;
+	border-radius: 6px;
+	background-color: hsl(var(--hsl-b4));
+	min-width: 0;
+}
+
+.news-card:hover,
+.news-card:focus,
+.news-card:active {
+	text-decoration: none;
+	color: #fff;
+}
+
+.news-card:hover {
+	background-color: hsl(var(--hsl-b3));
+}
+
+.news-card__cover {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.news-card__cover-container {
+	background-image: url("./news-show-default.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	border-radius: 6px;
+	overflow: hidden;
+	height: 160px;
+	position: relative;
+}
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min--moz-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx) {
+	.news-card__cover-container {
+		background-image: url("./news-show-default@2x.jpg");
+	}
+}
+
+.news-card--show .news-card__cover-container {
+	height: 200px;
+}
+
+.news-card__time {
+	border-radius: 10000px;
+	font-size: 10px;
+	padding: 5px 20px;
+	background-color: hsla(var(--hsl-b6), 0.5);
+	align-self: flex-end;
+	text-transform: uppercase;
+	font-weight: 600;
+	position: absolute;
+	top: 10px;
+	right: 15px;
+}
+
+.osu-md {
+	font-family: var(--font-content-override, var(--font-content));
 	line-height: 1.35;
-	padding: 20px;
+	color: inherit;
+	font-size: 14px;
 	word-wrap: break-word;
+
+	--code-background-colour: hsl(var(--hsl-b6));
+	--paragraph-space: 1.5em;
 }
 
 .osu-md code {
@@ -120,7 +235,6 @@ html, body {
 }
 
 .osu-md img {
-	vertical-align: middle;
 	max-width: 100%;
 }
 
@@ -144,10 +258,16 @@ html, body {
 	margin-bottom: 0;
 }
 
+.osu-md--news {
+	padding: 0;
+	color: hsl(var(--hsl-c1));
+	font-size: 14px;
+}
+
 .osu-md__figure-caption {
-	display: inline-block;
 	margin-top: 5px;
 	font-style: normal;
+	display: inline-block;
 }
 
 .osu-md__figure-container {
@@ -166,14 +286,10 @@ html, body {
 	counter-reset: c 0;
 }
 
-.osu-md h1,
-.osu-md h2,
-.osu-md h3,
-.osu-md h4,
-.osu-md h5,
-.osu-md h6 {
-	font-family: var(--font-default);
+.osu-md__header {
+	font-family: var(--font-default-override, var(--font-default));
 	clear: both;
+
 	font-weight: bold;
 	font-style: normal;
 	color: hsl(var(--hsl-c1));
@@ -183,74 +299,69 @@ html, body {
 	padding: 0;
 }
 
-.osu-md h1:first-child,
-.osu-md h2:first-child,
-.osu-md h3:first-child,
-.osu-md h4:first-child,
-.osu-md h5:first-child,
-.osu-md h6:first-child {
+.osu-md__header:first-child {
 	margin-top: 0;
 }
 
-.osu-md h1 {
+.osu-md__header--1 {
 	margin-top: 40px;
 	font-weight: 600;
 }
 
-.osu-md.osu-md--wiki h1 {
+.osu-md--wiki .osu-md__header--1 {
 	margin-right: 0;
 	margin-bottom: 10px;
 	padding-bottom: 5px;
 	border-bottom: 1px solid hsl(var(--hsl-b3));
 }
 
-.osu-md h2 {
+.osu-md__header--2 {
 	font-size: 26px;
 	font-weight: 600;
 	margin: 20px 0 10px;
 }
 
-.osu-md.osu-md--news h2 {
+.osu-md--news .osu-md__header--2 {
 	font-size: 24px;
 	padding-bottom: 5px;
 	border-bottom: 1px solid hsl(var(--hsl-b3));
 }
 
-.osu-md.osu-md--wiki h2 {
+.osu-md--wiki .osu-md__header--2 {
 	padding-bottom: 5px;
 	border-bottom: 1px solid hsl(var(--hsl-b3));
 }
 
-.osu-md h3 {
+.osu-md__header--3 {
 	font-size: 20px;
 	margin: 30px 0 10px;
 }
 
-.osu-md.osu-md--news h3 {
+.osu-md--news .osu-md__header--3 {
 	font-size: 18px;
 }
 
-.osu-md h4 {
+.osu-md__header--4 {
 	font-size: 18px;
 	margin: 30px 0 10px;
 }
 
-.osu-md.osu-md--news h4 {
+.osu-md--news .osu-md__header--4 {
 	font-size: inherit;
 	color: inherit;
 }
 
-.osu-md h5 {
+.osu-md__header--5 {
 	font-size: 16px;
 	margin-top: 20px;
 }
 
-.osu-md h6 {
+.osu-md__header--6 {
 	font-size: 14px;
 	margin-top: 20px;
 }
 
-.osu-md .Infobox {
+.osu-md__infobox {
 	padding: 10px;
 	margin: var(--paragraph-space) 0;
 	border: 1px solid hsl(var(--hsl-b4));
@@ -258,8 +369,9 @@ html, body {
 	text-align: center;
 }
 
-@media (min-width: 640px) {
-	.osu-md .Infobox {
+/* @media (min-width: 300px * 2 + @gutter-v2 * 2) */
+@media (min-width: 620px) {
+	.osu-md__infobox {
 		float: right;
 		clear: right;
 		width: 50%;
@@ -268,23 +380,23 @@ html, body {
 	}
 }
 
-.osu-md .Infobox > :first-child {
+.osu-md__infobox > :first-child {
 	margin-top: 0;
 }
 
-.osu-md .Infobox > :last-child {
+.osu-md__infobox > :last-child {
 	margin-bottom: 0;
 }
 
-.osu-md .Infobox thead {
+.osu-md__infobox thead {
 	display: none;
 }
 
-.osu-md .Infobox tbody > tr:first-child > td {
+.osu-md__infobox tbody > tr:first-child > td {
 	border-top: none;
 }
 
-.osu-md .Infobox td {
+.osu-md__infobox td {
 	vertical-align: top;
 }
 
@@ -293,11 +405,11 @@ html, body {
 }
 
 .osu-md__link--footnote-ref::after {
-	content: ']';
+	content: "]";
 }
 
 .osu-md__link--footnote-ref::before {
-	content: '[';
+	content: "[";
 }
 
 .osu-md__list {
@@ -322,7 +434,7 @@ html, body {
 
 .osu-md__list--ordered > .osu-md__list-item::before,
 .osu-md__footnote-container .osu-md__list-item::before {
-	content: counter(c) '. ';
+	content: counter(c) ". ";
 	min-width: 30px;
 	padding-right: 5px;
 	flex: none;
@@ -346,7 +458,35 @@ html, body {
 	line-height: inherit;
 }
 
-/* table */
+.osu-md__table {
+	overflow-x: auto;
+	margin-bottom: 20px;
+}
+
+.osu-md__table-data {
+	border-top: 1px solid hsl(var(--hsl-b4));
+	padding: 5px;
+	min-width: 30px;
+}
+
+.osu-md__table-data--center {
+	text-align: center;
+}
+
+.osu-md__table-data--header {
+	font-family: var(--font-default-override, var(--font-default));
+	border-top: none;
+	border-bottom: 2px solid hsl(var(--hsl-b3));
+	font-weight: bold;
+}
+
+.osu-md__table-data--left {
+	text-align: left;
+}
+
+.osu-md__table-data--right {
+	text-align: right;
+}
 
 /* This styling is not actually osu-md in osu-web, it's on all links */
 .osu-md a {
@@ -361,69 +501,41 @@ html, body {
 	text-decoration: underline;
 }
 
-/* Not in osu-md on osu-web */
-.osu-md .flag-country {
-	display: block;
+.flag-country {
+	--height: 1em;
+	--width-height-ratio: calc(100 / 72);
+
+	height: var(--height);
+	width: calc(var(--height) * var(--width-height-ratio));
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: 3px;
 	position: relative;
 	filter: saturate(1.1);
-	border-radius: 3px;
-	background-position: 50%;
-	background-size: cover;
-	background-repeat: no-repeat;
-	width: 1.3889em;
-	height: 1em;
+	display: block;
+
+	transform: translateZ(0);
 }
 
-.osu-md .flag-country::after {
+.flag-country::after {
 	position: absolute;
-	opacity: 0.25;
-	filter: contrast(0) brightness(2);
-	inset: 0;
-	border-radius: inherit;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
 	background: inherit;
+	border-radius: inherit;
+	filter: contrast(0) brightness(2);
+	opacity: 0.25;
 	content: '';
 }
 
-.osu-md .flag-country--wiki {
+.flag-country--wiki {
 	display: inline-block;
-	bottom: -0.1em;
 	border-radius: unset;
+	bottom: -0.1em;
 }
-
-/*
-.osu-md {
-  // not actual table but its container
-  &__table {
-    overflow-x: auto;
-    margin-bottom: 20px;
-  }
-
-  &__table-data {
-    border-top: 1px solid @osu-colour-b4;
-    padding: 5px;
-    min-width: 30px;
-
-    &--center {
-      text-align: center;
-    }
-
-    &--header {
-      .default-font();
-      border-top: none;
-      border-bottom: 2px solid @osu-colour-b3;
-      font-weight: bold;
-    }
-
-    &--left {
-      text-align: left;
-    }
-
-    &--right {
-      text-align: right;
-    }
-  }
-}
-*/
 
 .wiki-main-page__blurb {
 	font-family: var(--font-content-override, var(--font-content));
