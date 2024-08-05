@@ -1,11 +1,42 @@
-/* More fitting color for code lines in the left margin */
+/* Replacement for VSCode's code line styles */
 
-.showEditorSelection .code-active-line::before {
-	border-left: 3px solid hsl(var(--hsl-h2));
+.showEditorSelection :not(table, thead, tbody, tr, ul, ol, .osu-md__infobox).code-line,
+.showEditorSelection .osu-md__table:has(.code-line) {
+	position: relative;
 }
 
-.showEditorSelection .code-line:hover::before {
-	border-left: 3px solid hsl(var(--hsl-h1));
+.showEditorSelection :not(table, thead, tbody, tr, ul, ol, .osu-md__infobox):is(.code-active-line, .code-line:hover)::after,
+.showEditorSelection .osu-md__table:is(:has(.code-active-line), :has(.code-line):hover)::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	height: 100%;
+	left: -13px;
+	width: 3px;
+}
+
+.showEditorSelection :not(table, thead, tbody, tr, ul, ol, .osu-md__infobox).code-active-line::after,
+.showEditorSelection .osu-md__table:has(.code-active-line)::after {
+	background-color: hsl(var(--hsl-h2));
+}
+
+.showEditorSelection :not(table, thead, tbody, tr, ul, ol, .osu-md__infobox).code-line:hover::after,
+.showEditorSelection .osu-md__table:has(.code-line):hover::after {
+	background-color: hsl(var(--hsl-h1));
+}
+
+.showEditorSelection ul li:is(.code-active-line, .code-line:hover)::after {
+	left: -33px !important; /* 20px more to account for ul left padding */
+}
+
+/* Fix code line position, .osu-md__table has overflow-x: auto */
+.osu-md__table {
+	margin-left: -13px;
+	padding-left: 13px;
+}
+.showEditorSelection .osu-md__table:is(:has(.code-active-line), :has(.code-line):hover)::after {
+	left: 0;
 }
 
 /* Hide the sidebar on mobile */
@@ -54,4 +85,10 @@
 
 .wiki-main-page__blurb {
 	padding-top: 0;
+}
+
+/* Fix click target when overlapped by position:relative block */
+
+.osu-md__infobox {
+	z-index: 1;
 }

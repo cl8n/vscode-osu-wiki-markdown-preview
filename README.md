@@ -9,11 +9,6 @@ This extension simulates the osu! website in the markdown preview window. You sh
 - Custom element IDs
 - Correct automatic header IDs
 
-## Known issues
-
-- VSCode's "code line" style can block inputs to floating content, like infoboxes
-- VSCode's "code line" style causes ordered lists to lose their counter and shift left on hover
-
 ## Building the extension
 
 Use `vsce` to package or publish this extension. The fonts "Inter" and "Torus" are not included in this repository but should be added under `share/inter` and `share/torus` before building.

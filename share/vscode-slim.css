@@ -55,22 +55,3 @@
 body.scrollBeyondLastLine {
 	margin-bottom: calc(100vh - 22px);
 }
-
-body.showEditorSelection .code-line {
-	position: relative;
-}
-
-body.showEditorSelection :not(tr,ul,ol).code-active-line:before,
-body.showEditorSelection :not(tr,ul,ol).code-line:hover:before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: -12px;
-	height: 100%;
-}
-
-body.showEditorSelection li.code-active-line:before,
-body.showEditorSelection li.code-line:hover:before {
-	left: -30px;
-}
