@@ -92,3 +92,9 @@
 .osu-md__infobox {
 	z-index: 1;
 }
+
+/* Set flag background in this file to make use of relative path */
+
+.flag-country {
+	background-image: var(--bg);
+}

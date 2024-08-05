@@ -9,11 +9,6 @@ function getFlagCodepoint(code: string): string {
 	return flagCodepoint;
 }
 
-function getFlagUrl(flagCodepoint: string): string {
-	// TODO: Use local flag
-	return `https://osu.ppy.sh/assets/images/flags/${flagCodepoint}.svg`;
-}
-
 const inlineFlag: MarkdownIt.ParserInline.RuleInline = (state) => {
 	const pos = state.pos;
 
@@ -38,7 +33,7 @@ const inlineFlag: MarkdownIt.ParserInline.RuleInline = (state) => {
 	const token = state.push('flag_open', 'span', 1);
 	token.attrs = [
 		['class', 'flag-country flag-country--flat flag-country--wiki'],
-		['style', `background-image: url('${getFlagUrl(flagCodepoint)}')`],
+		['style', `--bg: url("./flags/${flagCodepoint}.svg");`], // TODO including many unnecessary flags in share/flags
 	];
 
 	state.push('flag_close', 'span', -1);
