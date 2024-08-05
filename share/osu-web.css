@@ -435,19 +435,6 @@ html, body {
 	text-align: right;
 }
 
-/* This styling is not actually osu-md in osu-web, it's on all links */
-.osu-md a {
-	color: hsl(var(--hsl-l2));
-	outline-style: none;
-	text-decoration: none;
-	transition: color 80ms linear;
-}
-
-.osu-md a:hover {
-	color: hsl(var(--hsl-l1));
-	text-decoration: underline;
-}
-
 .flag-country {
 	--height: 1em;
 	--width-height-ratio: calc(100 / 72);
