@@ -1,4 +1,4 @@
-/* More fitting color for code lines in the left margin (taken from ranking graph) */
+/* More fitting color for code lines in the left margin */
 
 .showEditorSelection .code-active-line::before {
 	border-left: 3px solid hsl(var(--hsl-h2));
