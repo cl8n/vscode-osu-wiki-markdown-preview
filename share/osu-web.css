@@ -235,10 +235,6 @@
 	font-weight: bold;
 	font-style: normal;
 	color: hsl(var(--hsl-c1));
-
-	/* Extra resets for VSCode style */
-	margin: 0;
-	padding: 0;
 }
 
 .osu-md__header:first-child {
