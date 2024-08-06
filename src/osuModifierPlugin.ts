@@ -96,6 +96,7 @@ const osuModifierPlugin: MarkdownIt.PluginSimple = (md) => {
 				'<div class="wiki-page">' +
 				'<div class="wiki-page__toc"></div>' +
 				'<div class="wiki-page__content">' +
+				renderWikiNotice(env) +
 				`<div class="osu-md osu-md--wiki">` +
 				html +
 				'</div>' +
@@ -136,3 +137,48 @@ const osuModifierPlugin: MarkdownIt.PluginSimple = (md) => {
 	};
 };
 export default osuModifierPlugin;
+
+function renderWikiNotice(env: any): string {
+	const translation = false; // TODO
+	let html = '';
+
+	if (translation && env.osu.legal) {
+		html += (
+			'<div class="wiki-notice wiki-notice--important">' +
+			'This translation is provided for convenience only. The original <a href="./en.md">English version</a> shall be the sole legally binding version of this text.' +
+			'</div>'
+		);
+	}
+
+	if (translation && env.osu.outdated_translation) {
+		html += (
+			'<div class="wiki-notice">' +
+			'This page contains an outdated translation of the original content. Please check the <a href="./en.md">English version</a> for the most accurate information (and consider updating the translation if you are able to help out)!' +
+			'</div>'
+		);
+	}
+
+	if (env.osu.outdated) {
+		html += (
+			'<div class="wiki-notice">' +
+			'The content on this page is incomplete or outdated. If you are able to help out, please consider updating the article!' +
+			'</div>'
+		);
+	} else if (env.osu.needs_cleanup) {
+		html += (
+			'<div class="wiki-notice">' +
+			'This page does not meet the standards of the osu! wiki and needs to be cleaned up or rewritten. If you are able to help out, please consider updating the article!' +
+			'</div>'
+		);
+	}
+
+	if (env.osu.stub) {
+		html += (
+			'<div class="wiki-notice">' +
+			'This article is incomplete and waiting on someone to expand it.' +
+			'</div>'
+		);
+	}
+
+	return html;
+}

@@ -525,3 +525,15 @@
 		grid-column: 1 / span 2;
 	}
 }
+
+.wiki-notice {
+	width: 100%;
+	padding: 10px 15px;
+	background-color: hsl(var(--hsl-b4));
+	color: hsl(45, 100%, 70%); /* @osu-colour-orange-1 */
+	margin-bottom: 10px;
+}
+
+.wiki-notice--important {
+	font-weight: bold;
+}
