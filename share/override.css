@@ -96,5 +96,5 @@
 /* Set flag background in this file to make use of relative path */
 
 .flag-country {
-	background-image: var(--bg);
+	background-image: var(--bg), url("./flags/fallback.png");
 }

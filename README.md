@@ -13,7 +13,7 @@ This extension simulates the osu! website in the markdown preview window. You sh
 
 Use `vsce` to package or publish this extension.
 
-The fonts "Inter" and "Torus" are not included in this repository but should be added under `share/inter` and `share/torus` before building. Country flag images from osu-web should also be added under `share/flags`.
+The fonts "Inter" and "Torus" are not included in this repository but should be added under `share/inter` and `share/torus` before building. Country flag images from osu-web should also be added under `share/flags` with filenames in the format `<code>.svg`, and the fallback flag at `fallback.png`.
 
 ## License
 

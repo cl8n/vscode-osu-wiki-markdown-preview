@@ -1,14 +1,5 @@
 import type MarkdownIt from 'markdown-it';
 
-function getFlagCodepoint(code: string): string {
-	const flagCodepoint = code
-		.split('')
-		.map((c) => (c.charCodeAt(0) + 127397).toString(16))
-		.join('-');
-
-	return flagCodepoint;
-}
-
 const inlineFlag: MarkdownIt.ParserInline.RuleInline = (state) => {
 	const pos = state.pos;
 
@@ -27,13 +18,11 @@ const inlineFlag: MarkdownIt.ParserInline.RuleInline = (state) => {
 		return false;
 	}
 
-	const flagCodepoint = getFlagCodepoint(match[1]);
-
 	// Add a token for the custom syntax
 	const token = state.push('flag_open', 'span', 1);
 	token.attrs = [
 		['class', 'flag-country flag-country--flat flag-country--wiki'],
-		['style', `--bg: url("./flags/${flagCodepoint}.svg");`], // TODO including many unnecessary flags in share/flags
+		['style', `--bg: url("./flags/${match[1]}.svg");`],
 	];
 
 	state.push('flag_close', 'span', -1);
