@@ -3,7 +3,7 @@ import type MarkdownIt from 'markdown-it';
 
 function getCaption(image: MarkdownIt.Token): string {
 	const title = image.attrGet('title');
-	return title ?? image.content;
+	return title ?? '';
 }
 
 const figure: MarkdownIt.Core.RuleCore = (state) => {
