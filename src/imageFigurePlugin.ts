@@ -1,11 +1,6 @@
 // Forked from https://www.npmjs.com/package/@mdit/plugin-figure
 import type MarkdownIt from 'markdown-it';
 
-function getCaption(image: MarkdownIt.Token): string {
-	const title = image.attrGet('title');
-	return title ?? '';
-}
-
 const figure: MarkdownIt.Core.RuleCore = (state) => {
 	// do not process first and last token
 	for (let i = 1, { length } = state.tokens; i < length - 1; i++) {
@@ -57,19 +52,21 @@ const figure: MarkdownIt.Core.RuleCore = (state) => {
 		const image = token.children.length === 1 ? token.children[0] : token.children[1];
 		image.attrSet('class', 'osu-md__figure-image');
 
-		const figCaption = getCaption(image);
+		const title = image.attrGet('title');
 
-		if (figCaption === '') continue;
+		if (!title) {
+			continue;
+		}
 
-		const openCaption = new state.Token('figcaption_open', 'em', 1);
-		openCaption.attrSet('class', 'osu-md__figure-caption');
+		const captionOpen = new state.Token('figcaption_open', 'em', 1);
+		captionOpen.attrSet('class', 'osu-md__figure-caption');
 
 		const captionText = new state.Token('text', '', 0);
-		captionText.content = figCaption;
+		captionText.content = title;
 
-		const closeCaption = new state.Token('figcaption_close', 'em', -1);
+		const captionClose = new state.Token('figcaption_close', 'em', -1);
 
-		token.children.push(openCaption, captionText, closeCaption);
+		token.children.push(captionOpen, captionText, captionClose);
 	}
 };
 
